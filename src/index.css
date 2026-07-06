@@ -1,0 +1,91 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/*
+  When you have the real Glonto font files, drop them into /public/fonts
+  and uncomment this block. Tailwind's `font-display` / `font-body` classes
+  will then render in the real brand typeface everywhere automatically —
+  no other code needs to change.
+
+  @font-face {
+    font-family: 'Glonto';
+    src: url('/fonts/Glonto-Regular.woff2') format('woff2');
+    font-weight: 400;
+    font-display: swap;
+  }
+*/
+
+:root {
+  --color-primary: #16538c;
+  --color-primary-dark: #103e69;
+  --color-accent: #00dc92;
+  --color-accent-dark: #00b87a;
+  --color-ink: #0f2438;
+  --color-mist: #f4f8fa;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  @apply font-body text-brand-ink antialiased;
+}
+
+/* Respect reduced-motion preferences site-wide */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
+}
+
+/* Visible keyboard focus ring, brand-colored, on every interactive element */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible,
+select:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 2px;
+}
+
+/* Lightweight typography for long-form legal pages (Privacy, Terms) — a
+   custom alternative to @tailwindcss/typography, since only two pages
+   need this and it isn't worth a whole extra dependency for that. */
+.legal-content h2 {
+  @apply mt-8 font-display text-xl font-bold text-brand-blue;
+}
+.legal-content p {
+  @apply mt-3 text-sm leading-relaxed text-brand-ink/70;
+}
+.legal-content ul {
+  @apply mt-3 list-disc space-y-1 pl-5 text-sm leading-relaxed text-brand-ink/70;
+}
+
+/* Blog post Markdown rendering */
+.prose-custom h1 { @apply mt-8 font-display text-2xl font-bold text-brand-blue; }
+.prose-custom h2 { @apply mt-8 font-display text-xl font-bold text-brand-blue; }
+.prose-custom h3 { @apply mt-6 font-display text-lg font-bold text-brand-blue; }
+.prose-custom p  { @apply mt-4 text-sm leading-relaxed text-brand-ink/80; }
+.prose-custom ul { @apply mt-4 list-disc space-y-1 pl-5 text-sm text-brand-ink/80; }
+.prose-custom ol { @apply mt-4 list-decimal space-y-1 pl-5 text-sm text-brand-ink/80; }
+.prose-custom li { @apply leading-relaxed; }
+.prose-custom a  { @apply text-brand-blue underline hover:text-brand-teal; }
+.prose-custom strong { @apply font-semibold text-brand-ink; }
+.prose-custom blockquote {
+  @apply my-6 border-l-4 border-brand-teal pl-4 text-sm italic text-brand-ink/60;
+}
+.prose-custom img {
+  @apply my-6 w-full rounded-card object-cover;
+}
+.prose-custom code {
+  @apply rounded bg-brand-mist px-1 py-0.5 text-xs font-mono text-brand-blue;
+}
