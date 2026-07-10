@@ -5,8 +5,6 @@ import Button from '../common/Button.jsx';
 export default function Hero() {
   return (
     <section className="relative overflow-hidden bg-brand-mist py-24 sm:py-32">
-      {/* Soft blurred color blobs rather than a busy repeating brand pattern —
-          reads as clean/premium/medical instead of "wallpapered". */}
       <div
         className="absolute -right-24 -top-24 h-72 w-72 rounded-full bg-brand-teal/15 blur-3xl"
         aria-hidden="true"
@@ -22,8 +20,9 @@ export default function Hero() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
         >
+          {/* Updated eyebrow — no longer says "Medical Tourism, Done Right"  */}
           <span className="text-sm font-semibold uppercase tracking-wide text-brand-teal">
-            Medical Tourism, Done Right
+            Personalised Healthcare &amp; Treatment Abroad
           </span>
           <h1 className="mx-auto mt-4 max-w-3xl font-display text-4xl font-bold text-brand-blue sm:text-5xl lg:text-6xl">
             Access trusted hospitals abroad, without the guesswork

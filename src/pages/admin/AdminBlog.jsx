@@ -201,7 +201,7 @@ export default function AdminBlog() {
         </Link>
       </div>
 
-      <div className="mt-6 overflow-hidden rounded-card bg-white shadow-card">
+      <div className="mt-6 overflow-x-auto rounded-card bg-white shadow-card">
         {loading ? (
           <div className="space-y-3 p-6">
             {Array.from({ length: 4 }).map((_, i) => <Skeleton key={i} className="h-12" />)}
@@ -215,7 +215,7 @@ export default function AdminBlog() {
             <thead className="border-b border-brand-blue/10 bg-brand-mist/50">
               <tr>
                 {['Title', 'Category', 'Status', 'Published', ''].map(h => (
-                  <th key={h} className="px-4 py-3 text-left text-xs font-semibold uppercase tracking-wide text-brand-ink/50">
+                  <th key={h} className={`px-4 py-3 text-left text-xs font-semibold uppercase tracking-wide text-brand-ink/50 ${['Category', 'Published'].includes(h) ? 'hidden sm:table-cell' : ''}`}>
                     {h}
                   </th>
                 ))}
@@ -225,7 +225,7 @@ export default function AdminBlog() {
               {posts.map(post => (
                 <tr key={post.id} className="hover:bg-brand-mist/30">
                   <td className="px-4 py-3 font-medium text-brand-ink">{post.title}</td>
-                  <td className="px-4 py-3 text-brand-ink/60">
+                  <td className="hidden px-4 py-3 text-brand-ink/60 sm:table-cell">
                     {post.blog_categories?.name || '—'}
                   </td>
                   <td className="px-4 py-3">
@@ -236,7 +236,7 @@ export default function AdminBlog() {
                       {post.status}
                     </span>
                   </td>
-                  <td className="px-4 py-3 text-brand-ink/50">
+                  <td className="hidden px-4 py-3 text-brand-ink/50 sm:table-cell">
                     {post.published_at
                       ? new Date(post.published_at).toLocaleDateString('en-GB')
                       : '—'}

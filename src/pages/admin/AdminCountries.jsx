@@ -62,7 +62,7 @@ export default function AdminCountries() {
         </button>
       </div>
 
-      <div className="mt-6 overflow-hidden rounded-card bg-white shadow-card">
+      <div className="mt-6 overflow-x-auto rounded-card bg-white shadow-card">
         {loading ? (
           <div className="space-y-3 p-6">{Array.from({ length: 3 }).map((_, i) => <Skeleton key={i} className="h-12" />)}</div>
         ) : !rows?.length ? (
@@ -72,7 +72,7 @@ export default function AdminCountries() {
             <thead className="border-b border-brand-blue/10 bg-brand-mist/50">
               <tr>
                 {['Image', 'Name', 'Slug', 'Active', ''].map(h => (
-                  <th key={h} className="px-4 py-3 text-left text-xs font-semibold uppercase tracking-wide text-brand-ink/50">{h}</th>
+                  <th key={h} className={`px-4 py-3 text-left text-xs font-semibold uppercase tracking-wide text-brand-ink/50 ${['Slug', 'Active'].includes(h) ? 'hidden sm:table-cell' : ''}`}>{h}</th>
                 ))}
               </tr>
             </thead>
@@ -86,8 +86,8 @@ export default function AdminCountries() {
                     }
                   </td>
                   <td className="px-4 py-3 font-medium text-brand-ink">{row.name}</td>
-                  <td className="px-4 py-3 font-mono text-xs text-brand-ink/50">{row.slug}</td>
-                  <td className="px-4 py-3">
+                  <td className="hidden px-4 py-3 font-mono text-xs text-brand-ink/50 sm:table-cell">{row.slug}</td>
+                  <td className="hidden px-4 py-3 sm:table-cell">
                     {row.is_active
                       ? <span className="text-xs font-semibold text-brand-teal">Yes</span>
                       : <span className="text-xs text-brand-ink/40">No</span>}

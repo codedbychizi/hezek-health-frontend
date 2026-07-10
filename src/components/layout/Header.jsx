@@ -3,14 +3,14 @@ import { NavLink, Link } from 'react-router-dom';
 import Logo from '../common/Logo.jsx';
 import Button from '../common/Button.jsx';
 
-// "Services" is the only item with a dropdown right now, so it's handled
-// separately from this flat list rather than building a generic recursive
-// nav config for just one case.
+// ─── Nav link config ──────────────────────────────────────────────────────────
+// To restore Hospitals: uncomment the { label: 'Hospitals', to: '/hospitals' } line
+// To hide How It Works: comment out the { label: 'How It Works', to: '/how-it-works' } line
 const NAV_LINKS = [
   { label: 'About', to: '/about' },
   { label: 'Countries', to: '/countries' },
-  { label: 'Hospitals', to: '/hospitals' },
-  { label: 'How It Works', to: '/how-it-works' },
+  // { label: 'Hospitals', to: '/hospitals' },  // ← uncomment when hospital data is ready
+  { label: 'How It Works', to: '/how-it-works' }, // ← comment out if she confirms removal
   { label: 'Blog', to: '/blog' },
   { label: 'Contact', to: '/contact' },
 ];
@@ -32,17 +32,11 @@ export default function Header() {
 
         {/* Desktop nav */}
         <nav className="hidden items-center gap-8 lg:flex">
-          <NavLink to="/about" className={linkClass}>
-            About
-          </NavLink>
+          <NavLink to="/about" className={linkClass}>About</NavLink>
 
-          {/* Services dropdown — pure CSS via Tailwind's group/group-hover,
-              no extra JS state. Clicking "Services" still navigates there;
-              hovering (or tabbing to it) reveals Specialties underneath. */}
+          {/* Services dropdown */}
           <div className="group relative py-2">
-            <NavLink to="/services" className={linkClass}>
-              Services
-            </NavLink>
+            <NavLink to="/services" className={linkClass}>Services</NavLink>
             <div className="invisible absolute left-0 top-full w-52 rounded-card bg-white py-2 opacity-0 shadow-card-hover transition-opacity duration-150 group-hover:visible group-hover:opacity-100 group-focus-within:visible group-focus-within:opacity-100">
               <Link
                 to="/specialties"
@@ -66,7 +60,7 @@ export default function Header() {
           </Button>
         </div>
 
-        {/* Mobile menu toggle */}
+        {/* Mobile toggle */}
         <button
           type="button"
           className="flex h-10 w-10 items-center justify-center rounded-full text-brand-blue lg:hidden"
@@ -76,34 +70,21 @@ export default function Header() {
         >
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true">
             {open ? (
-              <path
-                d="M6 6l12 12M18 6L6 18"
-                stroke="currentColor"
-                strokeWidth="2"
-                strokeLinecap="round"
-              />
+              <path d="M6 6l12 12M18 6L6 18" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
             ) : (
-              <path
-                d="M3 6h18M3 12h18M3 18h18"
-                stroke="currentColor"
-                strokeWidth="2"
-                strokeLinecap="round"
-              />
+              <path d="M3 6h18M3 12h18M3 18h18" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
             )}
           </svg>
         </button>
       </div>
 
-      {/* Mobile nav panel — Specialties shown as its own flat line under
-          Services rather than a nested dropdown; mobile menus stay simpler. */}
+      {/* Mobile nav */}
       {open && (
         <nav className="flex flex-col gap-1 border-t border-brand-blue/10 bg-white px-6 py-4 lg:hidden">
           <NavLink
             to="/about"
             className={({ isActive }) =>
-              `rounded-lg px-3 py-2 text-sm font-medium ${
-                isActive ? 'bg-brand-mist text-brand-blue' : 'text-brand-ink/70'
-              }`
+              `rounded-lg px-3 py-2 text-sm font-medium ${isActive ? 'bg-brand-mist text-brand-blue' : 'text-brand-ink/70'}`
             }
             onClick={() => setOpen(false)}
           >
@@ -112,9 +93,7 @@ export default function Header() {
           <NavLink
             to="/services"
             className={({ isActive }) =>
-              `rounded-lg px-3 py-2 text-sm font-medium ${
-                isActive ? 'bg-brand-mist text-brand-blue' : 'text-brand-ink/70'
-              }`
+              `rounded-lg px-3 py-2 text-sm font-medium ${isActive ? 'bg-brand-mist text-brand-blue' : 'text-brand-ink/70'}`
             }
             onClick={() => setOpen(false)}
           >
@@ -123,9 +102,7 @@ export default function Header() {
           <NavLink
             to="/specialties"
             className={({ isActive }) =>
-              `rounded-lg px-3 py-2 text-sm font-medium ${
-                isActive ? 'bg-brand-mist text-brand-blue' : 'text-brand-ink/70'
-              }`
+              `rounded-lg px-3 py-2 pl-6 text-sm font-medium ${isActive ? 'bg-brand-mist text-brand-blue' : 'text-brand-ink/70'}`
             }
             onClick={() => setOpen(false)}
           >
@@ -136,9 +113,7 @@ export default function Header() {
               key={link.to}
               to={link.to}
               className={({ isActive }) =>
-                `rounded-lg px-3 py-2 text-sm font-medium ${
-                  isActive ? 'bg-brand-mist text-brand-blue' : 'text-brand-ink/70'
-                }`
+                `rounded-lg px-3 py-2 text-sm font-medium ${isActive ? 'bg-brand-mist text-brand-blue' : 'text-brand-ink/70'}`
               }
               onClick={() => setOpen(false)}
             >
