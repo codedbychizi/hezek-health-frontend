@@ -161,7 +161,11 @@ export default function AboutPage() {
         </Container>
       </section>
 
-      {/* Founder */}
+      {/* ── Founder section ──────────────────────────────────────────────────
+          TEMPORARILY HIDDEN at client's request.
+          To restore: remove the opening {false && ( and the closing )}
+          ──────────────────────────────────────────────────────────────── */}
+      {false && (
       <section className="bg-brand-mist py-20">
         <Container className="flex flex-col items-center text-center">
           <FadeIn className="flex flex-col items-center">
@@ -176,6 +180,7 @@ export default function AboutPage() {
           </FadeIn>
         </Container>
       </section>
+      )}{/* end founder section */}
 
       {/* No Team section yet — there's currently only the founder. Add a
           team_members table + grid here once there are other people to
