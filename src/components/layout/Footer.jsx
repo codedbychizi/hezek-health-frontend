@@ -40,7 +40,7 @@ export default function Footer() {
         <path d="M0,16 Q50,0 100,10 T200,4 L200,16 Z" fill="#00DC92" opacity="0.85" />
       </svg>
 
-      <div className="mx-auto max-w-7xl px-6 py-14">
+      <div className="mx-auto max-w-7xl px-6 py-10 lg:py-12">
         <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-4">
           <div>
             <Logo height={110} variant="footer" />
