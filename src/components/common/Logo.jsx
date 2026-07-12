@@ -1,8 +1,9 @@
-import logoImg from '../../assets/logo/hezek-logo.png';
+import logoImg from '../../assets/logo/hezek-logo.svg';
 
 /**
- * Uses the real Hezek Health logo PNG provided by Geotech Media.
- * The file lives at src/assets/logo/hezek-logo.png.
+ * Uses the Hezek Health logo SVG from src/assets/logo/hezek-logo.svg.
+ * The SVG scales cleanly at any size, so default header and footer sizing
+ * remain controlled by the `height` prop.
  *
  * `height` controls the rendered height — width scales automatically
  * to preserve the aspect ratio. Default 48px works well in the header;
