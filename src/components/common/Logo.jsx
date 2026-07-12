@@ -11,15 +11,18 @@ import logoFooterImg from '../../assets/logo/hezek-logo-footer.svg';
  * showTagline is kept as a prop for backwards compatibility but is now
  * a no-op — the tagline is baked into the logo image itself.
  */
-export default function Logo({ height = 48, className = '', showTagline = false, variant = 'default' }) {
+export default function Logo({ height = 48, width, className = '', showTagline = false, variant = 'default' }) {
   const logoSrc = variant === 'footer' ? logoFooterImg : logoImg;
+  const style = width
+    ? { width: `${width}px`, height: height ? `${height}px` : 'auto' }
+    : { height: `${height}px`, width: 'auto' };
 
   return (
     <img
       src={logoSrc}
       alt="Hezek Health — Global care, local comfort"
       height={height}
-      style={{ height: `${height}px`, width: 'auto' }}
+      style={style}
       className={className}
     />
   );
