@@ -1,21 +1,22 @@
 import logoImg from '../../assets/logo/hezek-logo.svg';
+import logoFooterImg from '../../assets/logo/hezek-logo-footer.svg';
 
 /**
  * Uses the Hezek Health logo SVG from src/assets/logo/hezek-logo.svg.
- * The SVG scales cleanly at any size, so default header and footer sizing
- * remain controlled by the `height` prop.
+ * A footer-specific white version is available for dark backgrounds.
  *
  * `height` controls the rendered height — width scales automatically
- * to preserve the aspect ratio. Default 48px works well in the header;
- * pass a larger value for the footer or other placements if needed.
+ * to preserve the aspect ratio.
  *
  * showTagline is kept as a prop for backwards compatibility but is now
  * a no-op — the tagline is baked into the logo image itself.
  */
-export default function Logo({ height = 48, className = '', showTagline = false }) {
+export default function Logo({ height = 48, className = '', showTagline = false, variant = 'default' }) {
+  const logoSrc = variant === 'footer' ? logoFooterImg : logoImg;
+
   return (
     <img
-      src={logoImg}
+      src={logoSrc}
       alt="Hezek Health — Global care, local comfort"
       height={height}
       style={{ height: `${height}px`, width: 'auto' }}
