@@ -107,7 +107,7 @@ export default function Footer() {
         </div>
 
         <div className="mt-12 flex flex-col items-center justify-between gap-4 border-t border-white/15 pt-6 text-xs text-white/60 sm:flex-row">
-          <p>© {new Date().getFullYear()} Hezek Health. All rights reserved.</p>
+          <p>© {new Date().getFullYear()} HezekHealth. All rights reserved.</p>
           <div className="flex gap-6">
             <Link to="/privacy-policy" className="hover:text-white">
               Privacy Policy

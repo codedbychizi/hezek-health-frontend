@@ -5,9 +5,10 @@ import HowItWorksFull from '../../components/home/HowItWorksFull.jsx';
 import CountriesPreview from '../../components/home/CountriesPreview.jsx';
 import HospitalsPreview from '../../components/home/HospitalsPreview.jsx';
 import ServicesPreview from '../../components/home/ServicesPreview.jsx';
+import AdvancedTreatments from '../../components/home/AdvancedTreatments.jsx';
 import TestimonialsPreview from '../../components/home/TestimonialsPreview.jsx';
 import BlogPreview from '../../components/home/BlogPreview.jsx';
-import FAQPreview from '../../components/home/FaqPreview.jsx';
+import FAQPreview from '../../components/home/FAQPreview.jsx';
 import ContactCTA from '../../components/common/ContactCTA.jsx';
 
 export default function HomePage() {
@@ -15,7 +16,7 @@ export default function HomePage() {
     <>
       <SEO
         title="Home"
-        description="Hezek Health connects Nigerian patients with trusted hospitals abroad — personalised healthcare and treatment coordination from case review to recovery."
+        description="HezekHealth connects Nigerian patients with trusted hospitals abroad — personalised healthcare and treatment coordination from case review to recovery."
       />
       <Hero />
       <WhyChooseUs />
@@ -23,6 +24,7 @@ export default function HomePage() {
       <CountriesPreview />
       <HospitalsPreview />
       <ServicesPreview />
+      <AdvancedTreatments />
       <TestimonialsPreview />
       <BlogPreview />
       <FAQPreview />

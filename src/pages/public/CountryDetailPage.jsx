@@ -99,7 +99,7 @@ export default function CountryDetailPage() {
           ) : (
             <EmptyState
               title="Hospital partners coming soon"
-              description={`We're finalizing our hospital partnerships in ${country.name}. Submit a medical request and our team will match you directly.`}
+              description={`Access trusted hospitals in ${country.name} for personalised healthcare and treatment. Submit a medical request and our team will match you with the right hospital.`}
             />
           )}
         </Container>
