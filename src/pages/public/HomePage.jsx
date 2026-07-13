@@ -8,7 +8,7 @@ import ServicesPreview from '../../components/home/ServicesPreview.jsx';
 import AdvancedTreatments from '../../components/home/AdvancedTreatments.jsx';
 import TestimonialsPreview from '../../components/home/TestimonialsPreview.jsx';
 import BlogPreview from '../../components/home/BlogPreview.jsx';
-import FAQPreview from '../../components/home/FAQPreview.jsx';
+import FAQPreview from '../../components/home/FaqPreview.jsx';
 import ContactCTA from '../../components/common/ContactCTA.jsx';
 
 export default function HomePage() {
