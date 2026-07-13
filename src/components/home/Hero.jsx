@@ -25,8 +25,8 @@ export default function Hero() {
             Access trusted hospitals abroad, without the guesswork
           </h1>
           <p className="mt-5 max-w-lg text-lg text-brand-ink/70">
-            We help Nigerian patients connect with reputable hospitals and specialists in
-            India and Turkey — from case review to treatment, travel, and recovery.
+            We help patients connect with reputable hospitals and specialists in
+            India and Turkey, from case review to treatment, travel, and recovery.
           </p>
           <div className="mt-8 flex flex-wrap gap-4">
             <Button to="/medical-request" variant="accent">
