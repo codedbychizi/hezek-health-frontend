@@ -43,8 +43,8 @@ export default function Footer() {
       <div className="mx-auto max-w-7xl px-6 py-10 lg:py-12">
         <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-4">
           <div>
-            <Logo height={110} variant="footer" />
-            <p className="mt-4 max-w-xs text-sm text-white/70">
+            <Logo height={140} width={140} variant="footer" />
+            <p className="mt-2 max-w-xs text-sm text-white/70">
               Connecting Nigerian patients with trusted hospitals and specialists abroad —
               from case review to recovery.
             </p>

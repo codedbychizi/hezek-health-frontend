@@ -74,14 +74,14 @@ export default function AboutPage() {
     <>
       <SEO
         title="About Us"
-        description="Learn about Hezek Health's mission to connect Nigerian patients with trusted hospitals abroad."
+        description="Learn about HezekHealth's mission to connect Nigerian patients with trusted hospitals abroad."
       />
 
       <section className="bg-brand-mist py-20">
         <Container className="text-center">
           <FadeIn>
             <span className="text-sm font-semibold uppercase tracking-wide text-brand-teal">
-              About Hezek Health
+              About HezekHealth
             </span>
             <h1 className="mt-3 font-display text-4xl font-bold text-brand-blue sm:text-5xl">
               Global care, local comfort
@@ -96,7 +96,7 @@ export default function AboutPage() {
           <FadeIn>
             <h2 className="font-display text-2xl font-bold text-brand-blue">Our Story</h2>
             <p className="mt-4 text-brand-ink/80">
-              Hezek Health draws its inspiration from the biblical account of King Hezekiah,
+              HezekHealth draws its inspiration from the biblical account of King Hezekiah,
               who after heartfelt prayer was granted fifteen more years of life: "I will add
               fifteen years to your life. And I will deliver you and this city from the hand
               of the king of Assyria. I will defend this city." (Isaiah 38:5, NIV)
@@ -104,8 +104,8 @@ export default function AboutPage() {
           </FadeIn>
           <FadeIn delay={0.1}>
             <p className="rounded-card bg-brand-mist p-6 text-brand-ink/80">
-              This powerful promise of renewed life is the foundation of our brand. At Hezek
-              Health, we believe that health is a divine gift and that every individual
+              This powerful promise of renewed life is the foundation of our brand. At HezekHealth,
+              we believe that health is a divine gift and that every individual
               deserves the opportunity to live longer, fuller, and healthier.
             </p>
           </FadeIn>
