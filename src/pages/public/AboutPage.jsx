@@ -118,18 +118,18 @@ export default function AboutPage() {
           <FadeIn className="rounded-card bg-white p-8 shadow-card">
             <h2 className="font-display text-xl font-bold text-brand-blue">Mission</h2>
             <p className="mt-3 text-brand-ink/80">
-              To guide patients through complex healthcare journeys by providing coordinated
-              access to verified medical providers, beginning with fertility care and
-              expanding into other specialized treatment areas through trusted clinical
-              partnerships.
+              To make life-changing healthcare accessible beyond borders by guiding
+              every patient with compassion, integrity, and expertise. 
+              We are committed to simplifying the journey to trusted international
+              medical care by providing personalized support, honest guidance, and 
+              unwavering advocacy, so every individual and family can pursue healing
+              with confidence, dignity, and peace of mind.
             </p>
           </FadeIn>
           <FadeIn delay={0.1} className="rounded-card bg-white p-8 shadow-card">
             <h2 className="font-display text-xl font-bold text-brand-blue">Vision</h2>
             <p className="mt-3 text-brand-ink/80">
-              To position Nigeria as a globally trusted destination for safe, ethical, and
-              high-quality medical care by building structured systems that simplify access
-              to specialist treatment across borders.
+              To become Africa’s most trusted medical travel partner, connecting people to world-class healthcare across the globe while ensuring that no one faces their healthcare journey alone. We envision a future where distance, uncertainty, and complexity are no longer barriers to receiving the care every person deserves.
             </p>
           </FadeIn>
         </Container>
