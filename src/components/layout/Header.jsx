@@ -1,16 +1,16 @@
 import { useState } from 'react';
-import { NavLink, Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import Logo from '../common/Logo.jsx';
 import Button from '../common/Button.jsx';
 
-// ─── Nav link config ──────────────────────────────────────────────────────────
-// To restore Hospitals: uncomment the { label: 'Hospitals', to: '/hospitals' } line
-// To hide How It Works: comment out the { label: 'How It Works', to: '/how-it-works' } line
+// To restore Hospitals: uncomment { label: 'Hospitals', to: '/hospitals' }
+// To hide How It Works: comment out { label: 'How It Works', to: '/how-it-works' }
 const NAV_LINKS = [
   { label: 'About', to: '/about' },
+  { label: 'Services', to: '/services' },
   { label: 'Countries', to: '/countries' },
-  // { label: 'Hospitals', to: '/hospitals' },  // ← uncomment when hospital data is ready
-  { label: 'How It Works', to: '/how-it-works' }, // ← comment out if she confirms removal
+  // { label: 'Hospitals', to: '/hospitals' },
+  { label: 'How It Works', to: '/how-it-works' },
   { label: 'Blog', to: '/blog' },
   { label: 'Contact', to: '/contact' },
 ];
@@ -25,29 +25,14 @@ export default function Header() {
 
   return (
     <header className="sticky top-0 z-50 border-b border-brand-blue/10 bg-white/95 backdrop-blur">
-      <div className="mx-auto flex h-24 max-w-7xl items-center justify-between px-6">
+      <div className="mx-auto flex h-20 max-w-7xl items-center justify-between px-6">
         <NavLink to="/" onClick={() => setOpen(false)}>
-          <Logo height={100} />
+          <Logo size="sm" />
         </NavLink>
 
-        {/* Desktop nav */}
+        {/* Desktop nav — no dropdown, Specialties lives on the homepage now */}
         <nav className="hidden items-center gap-8 lg:flex">
-          <NavLink to="/about" className={linkClass}>About</NavLink>
-
-          {/* Services dropdown */}
-          <div className="group relative py-2">
-            <NavLink to="/services" className={linkClass}>Services</NavLink>
-            <div className="invisible absolute left-0 top-full w-52 rounded-card bg-white py-2 opacity-0 shadow-card-hover transition-opacity duration-150 group-hover:visible group-hover:opacity-100 group-focus-within:visible group-focus-within:opacity-100">
-              <Link
-                to="/specialties"
-                className="block px-4 py-2 text-sm text-brand-ink/70 hover:bg-brand-mist hover:text-brand-blue"
-              >
-                Medical Specialties
-              </Link>
-            </div>
-          </div>
-
-          {NAV_LINKS.slice(1).map((link) => (
+          {NAV_LINKS.map((link) => (
             <NavLink key={link.to} to={link.to} className={linkClass}>
               {link.label}
             </NavLink>
@@ -81,39 +66,14 @@ export default function Header() {
       {/* Mobile nav */}
       {open && (
         <nav className="flex flex-col gap-1 border-t border-brand-blue/10 bg-white px-6 py-4 lg:hidden">
-          <NavLink
-            to="/about"
-            className={({ isActive }) =>
-              `rounded-lg px-3 py-2 text-sm font-medium ${isActive ? 'bg-brand-mist text-brand-blue' : 'text-brand-ink/70'}`
-            }
-            onClick={() => setOpen(false)}
-          >
-            About
-          </NavLink>
-          <NavLink
-            to="/services"
-            className={({ isActive }) =>
-              `rounded-lg px-3 py-2 text-sm font-medium ${isActive ? 'bg-brand-mist text-brand-blue' : 'text-brand-ink/70'}`
-            }
-            onClick={() => setOpen(false)}
-          >
-            Services
-          </NavLink>
-          <NavLink
-            to="/specialties"
-            className={({ isActive }) =>
-              `rounded-lg px-3 py-2 pl-6 text-sm font-medium ${isActive ? 'bg-brand-mist text-brand-blue' : 'text-brand-ink/70'}`
-            }
-            onClick={() => setOpen(false)}
-          >
-            Medical Specialties
-          </NavLink>
-          {NAV_LINKS.slice(1).map((link) => (
+          {NAV_LINKS.map((link) => (
             <NavLink
               key={link.to}
               to={link.to}
               className={({ isActive }) =>
-                `rounded-lg px-3 py-2 text-sm font-medium ${isActive ? 'bg-brand-mist text-brand-blue' : 'text-brand-ink/70'}`
+                `rounded-lg px-3 py-2 text-sm font-medium ${
+                  isActive ? 'bg-brand-mist text-brand-blue' : 'text-brand-ink/70'
+                }`
               }
               onClick={() => setOpen(false)}
             >

@@ -1,40 +1,61 @@
-import { ClipboardList, Banknote, Stamp, Plane, Stethoscope, HeartPulse } from 'lucide-react';
+import {
+  Stethoscope,
+  Building2,
+  ClipboardList,
+  FileText,
+  Plane,
+  MessageSquare,
+  HeartHandshake,
+  HeartPulse,
+} from 'lucide-react';
 
-/**
- * Derived from the six-step process you provided (no separate services
- * list was supplied). Treat as a draft — confirm or edit the wording
- * whenever you're ready. Both the homepage preview and the full /services
- * page import from here, so there's exactly one place to update.
- */
 export const SERVICES = [
   {
+    icon: Stethoscope,
+    title: 'Medical Consultation',
+    description:
+      'Connect with experienced specialists abroad for professional medical advice tailored to your condition.',
+  },
+  {
+    icon: Building2,
+    title: 'Hospital Matching',
+    description:
+      'We identify the most suitable hospitals and specialists based on your diagnosis, goals, and budget.',
+  },
+  {
     icon: ClipboardList,
-    title: 'Case Review & Hospital Matching',
-    description: 'We review your case and match you with the right specialists.',
+    title: 'Treatment Planning',
+    description:
+      'Receive a personalised treatment proposal outlining recommended hospitals, costs, and expected timelines.',
   },
   {
-    icon: Banknote,
-    title: 'Treatment Cost Estimates',
-    description: 'Transparent, personalized cost estimates before you decide.',
-  },
-  {
-    icon: Stamp,
-    title: 'Medical Visa Assistance',
-    description: 'Guidance on documentation needed for your medical visa.',
+    icon: FileText,
+    title: 'Medical Record Review',
+    description:
+      'Our team reviews your reports, scans, and test results to ensure the right specialists assess your case.',
   },
   {
     icon: Plane,
-    title: 'Travel & Logistics Coordination',
-    description: 'Appointment scheduling, travel, and accommodation support.',
+    title: 'Travel Assistance',
+    description:
+      'We assist with medical visa documentation, travel planning, and accommodation arrangements abroad.',
   },
   {
-    icon: Stethoscope,
-    title: 'Treatment Coordination Abroad',
-    description: 'Support throughout your treatment at the chosen hospital.',
+    icon: MessageSquare,
+    title: 'Second Opinion',
+    description:
+      'Get an independent expert review of your diagnosis or treatment plan from a qualified specialist abroad.',
+  },
+  {
+    icon: HeartHandshake,
+    title: 'Concierge Services',
+    description:
+      'Dedicated personal support throughout your journey — from your first inquiry to your safe return home.',
   },
   {
     icon: HeartPulse,
-    title: 'Follow-Up Care Coordination',
-    description: 'Discharge planning and continuity of care back home.',
+    title: 'Follow-Up Care',
+    description:
+      'We coordinate discharge planning, medical reports, and continuity of care once you return to Nigeria.',
   },
 ];

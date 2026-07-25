@@ -6,9 +6,10 @@ import CountriesPreview from '../../components/home/CountriesPreview.jsx';
 import HospitalsPreview from '../../components/home/HospitalsPreview.jsx';
 import ServicesPreview from '../../components/home/ServicesPreview.jsx';
 import AdvancedTreatments from '../../components/home/AdvancedTreatments.jsx';
+import SpecialtiesSection from '../../components/home/SpecialtiesSection.jsx';
 import TestimonialsPreview from '../../components/home/TestimonialsPreview.jsx';
 import BlogPreview from '../../components/home/BlogPreview.jsx';
-import FAQPreview from '../../components/home/FaqPreview.jsx';
+import FAQPreview from '../../components/home/FAQPreview.jsx';
 import ContactCTA from '../../components/common/ContactCTA.jsx';
 
 export default function HomePage() {
@@ -25,6 +26,7 @@ export default function HomePage() {
       <HospitalsPreview />
       <ServicesPreview />
       <AdvancedTreatments />
+      <SpecialtiesSection />
       <TestimonialsPreview />
       <BlogPreview />
       <FAQPreview />
