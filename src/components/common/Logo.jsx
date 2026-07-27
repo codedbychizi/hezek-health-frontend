@@ -13,9 +13,11 @@ import logoFooterImg from '../../assets/logo/hezek-logo-footer.svg';
  */
 export default function Logo({ height = 48, width, className = '', showTagline = false, variant = 'default' }) {
   const logoSrc = variant === 'footer' ? logoFooterImg : logoImg;
-  const baseStyle = width
-    ? { width: `${width}px`, height: height ? `${height}px` : 'auto' }
-    : { height: `${height}px`, width: 'auto' };
+  const baseStyle = className
+  ? {}
+  : width
+  ? { width: `${width}px`, height: height ? `${height}px` : 'auto' }
+  : { height: `${height}px`, width: 'auto' };
 
   // For footer we keep the original SVG but add a subtle drop-shadow
   // to increase contrast against the dark background without changing fills.

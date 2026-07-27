@@ -27,7 +27,7 @@ export default function Header() {
     <header className="sticky top-0 z-50 border-b border-brand-blue/10 bg-white/95 backdrop-blur">
       <div className="mx-auto flex h-20 max-w-7xl items-center justify-between px-6">
         <NavLink to="/" onClick={() => setOpen(false)}>
-          <Logo size="sm" />
+          <Logo className="h-20 w-auto" />
         </NavLink>
 
         {/* Desktop nav — no dropdown, Specialties lives on the homepage now */}
