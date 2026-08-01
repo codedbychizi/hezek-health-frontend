@@ -55,11 +55,7 @@ export default function Sidebar({ onClose }) {
   return (
     <aside className="flex h-full w-64 flex-col bg-brand-blue">
       <div className="flex items-center justify-between px-5 py-5">
-        <img
-            src={Logo}
-            alt="HezekHealth"
-            style={{ height: '100px', width: 'auto', display: 'block' }}
-          />
+        <Logo height={140} width={140} variant="footer" />
         {onClose && (
           <button onClick={onClose} className="text-white/60 hover:text-white lg:hidden">
             <X className="h-5 w-5" />
