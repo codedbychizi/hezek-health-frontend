@@ -1,10 +1,9 @@
 import { NavLink } from 'react-router-dom';
-import {
-  LayoutDashboard, ClipboardList, Globe, Hospital,
+import logoFooterImg from '../../assets/logo/hezek-logo-footer.svg';
+import {  LayoutDashboard, ClipboardList, Globe, Hospital,
   Stethoscope, FileText, Star, HelpCircle,
   MessageSquare, Mail, Settings, X
 } from 'lucide-react';
-import Logo from '../common/Logo.jsx';
 
 const NAV_GROUPS = [
   {
@@ -56,7 +55,11 @@ export default function Sidebar({ onClose }) {
   return (
     <aside className="flex h-full w-64 flex-col bg-brand-blue">
       <div className="flex items-center justify-between px-5 py-5">
-        <Logo className="[&_span]:text-white [&_span_span]:text-brand-teal" />
+        <img
+            src={logoFooterImg}
+            alt="HezekHealth"
+            style={{ height: '100px', width: 'auto', display: 'block' }}
+          />
         {onClose && (
           <button onClick={onClose} className="text-white/60 hover:text-white lg:hidden">
             <X className="h-5 w-5" />

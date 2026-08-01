@@ -1,10 +1,8 @@
 import { useState } from 'react';
 import { NavLink } from 'react-router-dom';
-import Logo from '../common/Logo.jsx';
+import logoImg from '../../assets/logo/hezek-logo.svg';
 import Button from '../common/Button.jsx';
 
-// To restore Hospitals: uncomment { label: 'Hospitals', to: '/hospitals' }
-// To hide How It Works: comment out { label: 'How It Works', to: '/how-it-works' }
 const NAV_LINKS = [
   { label: 'About', to: '/about' },
   { label: 'Services', to: '/services' },
@@ -24,13 +22,29 @@ export default function Header() {
     }`;
 
   return (
-    <header className="sticky top-0 z-50 border-b border-brand-blue/10 bg-white/95 backdrop-blur">
+<header className="fixed top-0 left-0 right-0 z-50 w-full border-b border-brand-blue/10 bg-white/95 backdrop-blur">
+      {/*
+        h-36 = 144px tall — matches the 140px logo height with 2px breathing room top and bottom.
+        To make the header taller: increase h-36 e.g. h-40, h-44
+        To make it shorter (and logo smaller): reduce both h-36 AND the logo height below
+      */}
       <div className="mx-auto flex h-20 max-w-7xl items-center justify-between px-6">
+
         <NavLink to="/" onClick={() => setOpen(false)}>
-          <Logo className="h-20 w-auto" />
+          {/*
+            Logo size: matches the footer exactly (140px tall).
+            To resize: change the height value — width scales automatically.
+            To make BIGGER: increase height e.g. 160px
+            To make SMALLER: decrease height e.g. 100px (also reduce h-36 above)
+          */}
+          <img
+            src={logoImg}
+            alt="HezekHealth — Global care, local comfort"
+            style={{ height: '120px', width: 'auto', display: 'block' }}
+          />
         </NavLink>
 
-        {/* Desktop nav — no dropdown, Specialties lives on the homepage now */}
+        {/* Desktop nav */}
         <nav className="hidden items-center gap-8 lg:flex">
           {NAV_LINKS.map((link) => (
             <NavLink key={link.to} to={link.to} className={linkClass}>

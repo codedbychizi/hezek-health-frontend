@@ -99,7 +99,7 @@ export default function AdminLayout() {
           <button className="text-brand-blue lg:hidden" onClick={() => setSidebarOpen(true)}>
             <Menu className="h-6 w-6" />
           </button>
-          <span className="text-sm text-brand-ink/50">Hezek Health Admin</span>
+          <span className="text-sm text-brand-ink/50">HezekHealth Admin</span>
         </header>
         <main className="flex-1 overflow-y-auto p-6">
           <Outlet />

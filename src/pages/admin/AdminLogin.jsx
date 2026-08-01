@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
 import { useForm } from 'react-hook-form';
 import { supabase } from '../../lib/supabaseClient.js';
-import Logo from '../../components/common/Logo.jsx';
+import logoImg from '../../assets/logo/hezek-logo.svg';
 
 export default function AdminLogin() {
   const { register, handleSubmit, formState: { errors } } = useForm();
@@ -30,7 +30,11 @@ export default function AdminLogin() {
     <div className="flex min-h-screen items-center justify-center bg-brand-mist px-6">
       <div className="w-full max-w-sm">
         <div className="mb-8 flex justify-center">
-          <Logo showTagline />
+          <img
+            src={logoImg}
+            alt="HezekHealth"
+            style={{ height: '140px', width: 'auto', display: 'block' }}
+          />
         </div>
         <div className="rounded-card bg-white p-8 shadow-card">
           <h1 className="font-display text-xl font-bold text-brand-blue">Admin Sign In</h1>
