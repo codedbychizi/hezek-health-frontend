@@ -1,5 +1,5 @@
 import { NavLink } from 'react-router-dom';
-import logoFooterImg from '../../assets/logo/hezek-logo-footer.svg';
+import Logo from '../common/Logo.jsx';
 import {  LayoutDashboard, ClipboardList, Globe, Hospital,
   Stethoscope, FileText, Star, HelpCircle,
   MessageSquare, Mail, Settings, X
@@ -56,7 +56,7 @@ export default function Sidebar({ onClose }) {
     <aside className="flex h-full w-64 flex-col bg-brand-blue">
       <div className="flex items-center justify-between px-5 py-5">
         <img
-            src={logoFooterImg}
+            src={Logo}
             alt="HezekHealth"
             style={{ height: '100px', width: 'auto', display: 'block' }}
           />
