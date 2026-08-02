@@ -1,6 +1,7 @@
 import { NavLink } from 'react-router-dom';
-import Logo from '../common/Logo.jsx';
-import {  LayoutDashboard, ClipboardList, Globe, Hospital,
+import logoImg from '../../assets/logo/hezek-logo.svg';
+import {
+  LayoutDashboard, ClipboardList, Globe, Hospital,
   Stethoscope, FileText, Star, HelpCircle,
   MessageSquare, Mail, Settings, X
 } from 'lucide-react';
@@ -55,7 +56,24 @@ export default function Sidebar({ onClose }) {
   return (
     <aside className="flex h-full w-64 flex-col bg-brand-blue">
       <div className="flex items-center justify-between px-5 py-5">
-        <Logo height={140} width={140} variant="footer" />
+        {/*
+          filter: brightness(0) invert(1) converts all dark colours in the
+          SVG to white, making it visible on the dark blue sidebar.
+          This is the correct approach for single-colour SVG logos on dark
+          backgrounds — no separate "footer" variant file needed.
+
+          To revert to the coloured logo: remove the filter style property.
+        */}
+        <img
+          src={logoImg}
+          alt="HezekHealth"
+          style={{
+            height: '100px',
+            width: 'auto',
+            display: 'block',
+            filter: 'brightness(0) invert(1)',
+          }}
+        />
         {onClose && (
           <button onClick={onClose} className="text-white/60 hover:text-white lg:hidden">
             <X className="h-5 w-5" />
