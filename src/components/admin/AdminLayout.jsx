@@ -34,7 +34,7 @@ function SidebarContent({ onClose }) {
   return (
     <div className="flex h-full flex-col">
       <div className="flex items-center justify-between border-b border-white/10 p-5">
-        <Logo className="[&_span]:text-white [&_span_span]:text-brand-teal" />
+        <Logo variant="footer" className="h-auto w-32" />
         {onClose && (
           <button onClick={onClose} className="text-white/60 lg:hidden">
             <X className="h-5 w-5" />
