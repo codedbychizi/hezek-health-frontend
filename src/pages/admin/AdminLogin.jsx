@@ -38,7 +38,7 @@ export default function AdminLogin() {
         </div>
         <div className="rounded-card bg-white p-8 shadow-card">
           <h1 className="font-display text-xl font-bold text-brand-blue">Admin Sign In</h1>
-          <p className="mt-1 text-sm text-brand-ink/50">Hezek Health Dashboard</p>
+          <p className="mt-1 text-sm text-brand-ink/50">HezekHealth Dashboard</p>
 
           <form onSubmit={handleSubmit(onSubmit)} className="mt-6 space-y-4" noValidate>
             <div>
